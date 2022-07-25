@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #000;
+  color: #fff;
+}
+#h2.keep {
+  font-size: 30px;
+  color: lime;
+}
+#h2.clicked {
+  color: blueviolet;
+  transition: color 0.8s ease-in-out;
+}
