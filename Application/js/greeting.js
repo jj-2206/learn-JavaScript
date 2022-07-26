@@ -36,4 +36,3 @@ if (savedUsername === null) {
   // greeting 표시
   paintGreeting(savedUsername);
 }
-console.log(savedUsername);
