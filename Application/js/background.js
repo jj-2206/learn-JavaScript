@@ -6,7 +6,7 @@ const chosenImage = images[Math.floor(Math.random() * images.length)];
 const bgImage = document.createElement('img');
 
 bgImage.src = `./img/${chosenImage}`;
-console.log(bgImage); // <img src="./img/2.png">
+// console.log(bgImage); // <img src="./img/2.png">
 
 // 만든 요소를 추가하기 appendChild
 document.body.appendChild(bgImage);
