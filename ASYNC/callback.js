@@ -1,4 +1,3 @@
-/*
 function printImmediately(print) {
   print();
 }
@@ -10,7 +9,6 @@ setTimeout(() => console.log('2'), 1000); // 비동기
 console.log('3'); // 동기
 printImmediately(() => console.log('Hello')); // 동기
 printWithDelay(() => console.log('async callback'), 2000); // 비동기
-*/
 
 // Callback Hell
 class UserStorage {
