@@ -1,10 +1,13 @@
 const clock = document.querySelector('#clock');
 
-function sayHello() {
-  console.log('Hello');
+function getClock() {
+  // JavaScript Date 객체
+  const date = new Date();
+  clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 }
 
-setTimeout(sayHello, 5000);
+getClock();
+setInterval(getClock, 1000);
 
-// setInterval(함수, number(ms)) 5초마다 실행
-// setInterval(sayHello, 5000);
+// setTimeout(Function, Number) ms후에 한 번 실행
+// setInterval(Function, Number) ms마다 실행
