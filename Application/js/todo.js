@@ -70,11 +70,11 @@ toDoForm.addEventListener('submit', handleTodoSubmit);
 // }
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
-console.log(savedToDos); // ["1","2","3","4","5","6","7","8"]
+// console.log(savedToDos); // ["1","2","3","4","5","6","7","8"]
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
-  console.log(parsedToDos); // (8) ['1', '2', '3', '4', '5', '6', '7', '8']
+  // console.log(parsedToDos); // (8) ['1', '2', '3', '4', '5', '6', '7', '8']
   // parsedToDos.forEach(sayHello);
   // parsedToDos.forEach((item) => console.log('This is the trun of', item));
   parsedToDos.forEach(paintToDo);
