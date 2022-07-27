@@ -2,14 +2,19 @@ const toDoForm = document.getElementById('todo-form');
 const toDoInput = toDoForm.querySelector('input');
 const toDoList = document.getElementById('todo-list');
 
-// input 입력값을 배열로 만들기 toDos는 빈배열
-const toDos = [];
+const TODOS_KEY = 'todos';
+
+// input 입력값을 배열로 만들기
+// toDos는 빈배열 -> refresh 할 때마다 로컬스토리지에 "비워내고 다시 담고" 있는 결과를 만듦
+// 업데이트 할 수 있게 const 에서 let 으로 키워드 변경
+let toDos = [];
 
 // localStorage에 저장
 function saveToDos() {
   // JSON.stringify() 배열[]이나 객체{}를 string으로 만들어준다.
-  // localStorage.setItem('todos', toDos); 1,2,3
-  localStorage.setItem('todos', JSON.stringify(toDos));
+  // 객체를 JSON 포맷의 문자열로 변환합니다.
+  // localStorage.setItem('todos', toDos); // 1,2,3
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 // target 이벤트 특정하기 -> 부모 요소 찾기
@@ -38,8 +43,32 @@ function handleTodoSubmit(event) {
   toDoInput.value = '';
   // Array.prototype.push()
   toDos.push(newTodo);
-  // console.log(toDos);
+  console.log(toDos);
   paintToDo(newTodo);
   saveToDos();
 }
 toDoForm.addEventListener('submit', handleTodoSubmit);
+
+// forEach()
+// function sayHello(item) {
+// console.log('This is the trun of', item);
+// This is the trun of 1
+// This is the trun of 2
+// This is the trun of 3
+// This is the trun of 4
+// This is the trun of 5
+// This is the trun of 6
+// This is the trun of 7
+// This is the trun of 8
+// }
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+console.log(savedToDos); // ["1","2","3","4","5","6","7","8"]
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  toDos = parsedToDos;
+  console.log(parsedToDos); // (8) ['1', '2', '3', '4', '5', '6', '7', '8']
+  // parsedToDos.forEach(sayHello);
+  // parsedToDos.forEach((item) => console.log('This is the trun of', item));
+  parsedToDos.forEach(paintToDo);
+}
