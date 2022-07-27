@@ -22,12 +22,17 @@ function deleteToDo(event) {
   // console.log(event.target.parentElement.innerText);
   const li = event.target.parentElement;
   li.remove();
+  // filter 지우고 싶은 item을 제외하고 새 array를 반환, 원형 보존
+  // console.log(typeof li.id); string
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
 }
 
 function paintToDo(newTodo) {
   const li = document.createElement('li');
+  li.id = newTodo.id;
   const span = document.createElement('span');
-  span.innerText = newTodo;
+  span.innerText = newTodo.text;
   const button = document.createElement('button');
   button.innerText = '❌';
   button.addEventListener('click', deleteToDo);
@@ -41,10 +46,12 @@ function handleTodoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
   toDoInput.value = '';
-  // Array.prototype.push()
-  toDos.push(newTodo);
-  console.log(toDos);
-  paintToDo(newTodo);
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  toDos.push(newTodoObj);
+  paintToDo(newTodoObj);
   saveToDos();
 }
 toDoForm.addEventListener('submit', handleTodoSubmit);
