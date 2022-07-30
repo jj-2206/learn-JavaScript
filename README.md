@@ -6,4 +6,8 @@
     ![img](./Application/img/cssNotYet.png)
 
 - 드림코딩
+
   - [자바스크립트 12. 프로미스 개념부터 활용까지 JavaScript Promise | 프론트엔드 개발자 입문편 (JavaScript ES6)](https://www.youtube.com/watch?v=JB_yU6Oe2eE)
+
+- How To Create A Search Bar In JavaScript
+  - [How To Create A Search Bar In JavaScript](https://www.youtube.com/watch?v=TlP5WIxVirU)
