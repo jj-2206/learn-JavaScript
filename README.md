@@ -10,4 +10,8 @@
   - [자바스크립트 12. 프로미스 개념부터 활용까지 JavaScript Promise | 프론트엔드 개발자 입문편 (JavaScript ES6)](https://www.youtube.com/watch?v=JB_yU6Oe2eE)
 
 - Web Dev Simplified
+
   - [How To Create A Search Bar In JavaScript](https://www.youtube.com/watch?v=TlP5WIxVirU)
+
+- GeekProbin
+  - [Movie Search App Using OMDb API | Vanilla JavaScript Project](https://www.youtube.com/watch?v=1VjdxCTBfUI)
