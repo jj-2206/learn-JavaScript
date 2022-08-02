@@ -18,4 +18,6 @@
   - [Movie Search App Using OMDb API | Vanilla JavaScript Project](https://www.youtube.com/watch?v=1VjdxCTBfUI)
 
 - Florin Pop
+
+  - [PokeDex - JavaScript Tutorial](https://www.youtube.com/watch?v=XL68br6JyYs)
   - [Infinite Scrolling with JavaScript](https://www.youtube.com/watch?v=L8X4zAsoxb4)
