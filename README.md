@@ -14,4 +14,8 @@
   - [How To Create A Search Bar In JavaScript](https://www.youtube.com/watch?v=TlP5WIxVirU)
 
 - GeekProbin
+
   - [Movie Search App Using OMDb API | Vanilla JavaScript Project](https://www.youtube.com/watch?v=1VjdxCTBfUI)
+
+- Florin Pop
+  - [Infinite Scrolling with JavaScript](https://www.youtube.com/watch?v=L8X4zAsoxb4)
