@@ -8,7 +8,7 @@ getPost();
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-  console.log({ scrollTop, scrollHeight, clientHeight });
+  // console.log({ scrollTop, scrollHeight, clientHeight });
 
   if (clientHeight + scrollTop >= scrollHeight - 5) {
     // show the loading animation
@@ -18,7 +18,6 @@ window.addEventListener('scroll', () => {
 
 function showLoading() {
   loading.classList.add('show');
-
   // load more data
   setTimeout(getPost, 1000);
 }
@@ -28,12 +27,10 @@ async function getPost() {
     `https://jsonplaceholder.typicode.com/posts/${getRandomNr()}`
   );
   const postData = await postResponse.json();
-
   const userResponse = await fetch('https://randomuser.me/api');
   const userData = await userResponse.json();
-
   const data = { post: postData, user: userData.results[0] };
-
+  console.log(data);
   addDataToDOM(data);
 }
 
