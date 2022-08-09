@@ -1,33 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Vanilla Challenge</title>
-    <meta charset="UTF-8" />
-    <style>
-      body {
-        font-family: sans-serif;
-        display: flex;
-      }
-
-      h2 {
-        color: white;
-      }
-
-      .bigScreen {
-        background-color: #f1c40f;
-      }
-
-      .mediumScreen {
-        background-color: #9b59b6;
-      }
-
-      .smallScreen {
-        background-color: #3498db;
-      }
-    </style>
+    <title>Vanilla JS Challenge</title>
+    <script src="./main.js" defer></script>
   </head>
-  <body class="mediumScreen">
-    <h2>Hello!</h2>
-    <script src="./main.js"></script>
+  <body>
+    <h1>Random Number Game</h1>
+    <form id="setNumber">
+      <h3>Generate a number between 0 and <input type="number" /></h3>
+    </form>
+    <form id="userNumber">
+      <input type="number" />
+      <button>play!</button>
+    </form>
+    <br />
+    <div id="displayResult"></div>
   </body>
 </html>
