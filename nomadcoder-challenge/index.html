@@ -6,14 +6,19 @@
   </head>
   <body>
     <h1>Random Number Game</h1>
-    <form id="setNumber">
-      <h3>Generate a number between 0 and <input type="number" /></h3>
-    </form>
-    <form id="userNumber">
-      <input type="number" />
+    <div>
+      <h3 class="js-title">
+        Generate a number between 0 and <input id="max-number" type="number" />
+      </h3>
+    </div>
+    <form id="js-guess">
+      <!-- <button>태그를 클릭해 <input>태그의 내용을 submit(제출)하기 위해서는 <form>태그 내에 작성해야 합니다. -->
+      <label>Guess the number:</label>
+      <input type="number" max="200" min="5" />
       <button>play!</button>
     </form>
-    <br />
-    <div id="displayResult"></div>
+    <div id="js-result">
+      <span></span>
+    </div>
   </body>
 </html>
