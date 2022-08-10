@@ -5,7 +5,7 @@ function calculateChristmasCountdown() {
   const currentMonth = now.getMonth() + 1;
   const currentDay = now.getDate();
   let nextChristmasYear = now.getFullYear();
-  if (currentMonth == 12 && currentDay > 25) {
+  if (currentMonth === 12 && currentDay > 25) {
     nextChristmasYear = nextChristmasYear + 1;
   }
   const nextChristmasDate = nextChristmasYear + '-12-25T00:00:00.000Z';
@@ -17,7 +17,7 @@ function calculateChristmasCountdown() {
   let minutes = 0;
   let seconds = 0;
 
-  if (currentMonth != 12 || (currentMonth == 12 && currentDay != 25)) {
+  if (currentMonth !== 12 || (currentMonth === 12 && currentDay !== 25)) {
     days = Math.floor(diffSeconds / (3600 * 24));
     diffSeconds -= days * 3600 * 24;
     hours = Math.floor(diffSeconds / 3600);
