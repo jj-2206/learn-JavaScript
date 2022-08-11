@@ -25,6 +25,8 @@ const button = document.querySelector('button');
 const handleClick = () => {
   const firstColor = colors[Math.floor(Math.random() * colors.length)];
   const secondColor = colors[Math.floor(Math.random() * colors.length)];
-  body.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
+  if (firstColor !== secondColor) {
+    body.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
+  } else body.style.background = `linear-gradient( white, ${secondColor})`;
 };
 button.addEventListener('click', handleClick);
