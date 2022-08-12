@@ -19,14 +19,17 @@ const colors = [
   '#ff3f34',
 ];
 
-const body = document.querySelector('body');
 const button = document.querySelector('button');
 
 const handleClick = () => {
   const firstColor = colors[Math.floor(Math.random() * colors.length)];
   const secondColor = colors[Math.floor(Math.random() * colors.length)];
-  if (firstColor !== secondColor) {
-    body.style.background = `linear-gradient(${firstColor}, ${secondColor})`;
-  } else body.style.background = `linear-gradient( white, ${secondColor})`;
+  // 선택된 두 가지 색상이 겹치는 것을 방지하기 위한 코드입니다.
+  // 변수 firstColor와 secondColor가 동일할 경우 handleClick함수를 다시 실행합니다.
+  // 이렇게 함수 내부에 자기 자신을 호출하는 함수를 재귀 함수라 합니다
+  if (firstColor === secondColor) {
+    return handleClick();
+  }
+  document.body.style.background = `linear-gradient(to left, ${firstColor}, ${secondColor})`;
 };
 button.addEventListener('click', handleClick);
