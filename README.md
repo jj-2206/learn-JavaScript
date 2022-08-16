@@ -12,11 +12,10 @@
 
   - [How To Create A Search Bar In JavaScript](https://www.youtube.com/watch?v=TlP5WIxVirU)
 
-- GeekProbin (movie-search/)
-
-  - [Movie Search App Using OMDb API | Vanilla JavaScript Project](https://www.youtube.com/watch?v=1VjdxCTBfUI)
-
 - Florin Pop (poke-dex/ infinite-scrolling/)
 
   - [PokeDex - JavaScript Tutorial](https://www.youtube.com/watch?v=XL68br6JyYs)
   - [Infinite Scrolling with JavaScript](https://www.youtube.com/watch?v=L8X4zAsoxb4)
+
+- 데브리(Method/)
+  - [Javascript 입문 초급 실전 3 - map,filter, reduce](https://www.youtube.com/watch?v=vqdzVZxoRtM)
