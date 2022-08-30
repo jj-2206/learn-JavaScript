@@ -3,21 +3,28 @@ const reduxLogger = require("redux-logger");
 const createStore = redux.createStore;
 const logger = reduxLogger.createLogger();
 const applyMiddleware = redux.applyMiddleware;
+const combineReducers = redux.combineReducers;
 
 // actions
 // action-types
 const ADD_ARTICLE = "ADD_ARTICLE";
+const ADD_VIEWCOUNT = "ADD_VIEWCOUNT";
 const addArticle = () => {
   return {
     type: ADD_ARTICLE,
   };
 };
+const addViewCount = () => {
+  return {
+    type: ADD_VIEWCOUNT,
+  };
+};
 
 // reducer
-const initialState = {
+const articleState = {
   articles: 0,
 };
-const reducer = (state = initialState, action) => {
+const articlesReducer = (state = articleState, action) => {
   switch (action.type) {
     case ADD_ARTICLE:
       return {
@@ -29,8 +36,29 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+const viewState = {
+  viewCount: 100,
+};
+
+const viewReducer = (state = viewState, action) => {
+  switch (action.type) {
+    case ADD_VIEWCOUNT:
+      return {
+        ...state,
+        viewCount: state.viewCount + 1,
+      };
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({
+  view: viewReducer,
+  articles: articlesReducer,
+});
+
 // store
-const store = createStore(reducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 /*
 console.log(store.getState())
@@ -59,8 +87,33 @@ $ node store.js
 store.dispatch(addArticle());
 store.dispatch(addArticle());
 store.dispatch(addArticle());
-store.dispatch(addArticle());
-store.dispatch(addArticle());
+store.dispatch(addViewCount());
+store.dispatch(addViewCount());
+
+/*
+combineReducers 사용
+$ node store.js
+ action ADD_ARTICLE @ 21:54:22.792
+   prev state { view: { viewCount: 100 }, articles: { articles: 0 } }
+   action     { type: 'ADD_ARTICLE' }
+   next state { view: { viewCount: 100 }, articles: { articles: 1 } }
+ action ADD_ARTICLE @ 21:54:22.805
+   prev state { view: { viewCount: 100 }, articles: { articles: 1 } }
+   action     { type: 'ADD_ARTICLE' }
+   next state { view: { viewCount: 100 }, articles: { articles: 2 } }
+ action ADD_ARTICLE @ 21:54:22.808
+   prev state { view: { viewCount: 100 }, articles: { articles: 2 } }
+   action     { type: 'ADD_ARTICLE' }
+   next state { view: { viewCount: 100 }, articles: { articles: 3 } }
+ action ADD_VIEWCOUNT @ 21:54:22.812
+   prev state { view: { viewCount: 100 }, articles: { articles: 3 } }
+   action     { type: 'ADD_VIEWCOUNT' }
+   next state { view: { viewCount: 101 }, articles: { articles: 3 } }
+ action ADD_VIEWCOUNT @ 21:54:22.820
+   prev state { view: { viewCount: 101 }, articles: { articles: 3 } }
+   action     { type: 'ADD_VIEWCOUNT' }
+   next state { view: { viewCount: 102 }, articles: { articles: 3 } }
+*/
 
 /*
 middleware로 logger실행
